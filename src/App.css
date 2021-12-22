@@ -32,6 +32,25 @@
 .navContainer {
   position: fixed;
   width: 100vw;
+  top: 0;
+}
+
+.positionAbsolute {
+  position: absolute;
+}
+
+.positionFixed {
+  position: fixed;
+}
+
+.carouselArrows {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.7);
+}
+
+.carouselArrows:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(2);
 }
 
 @keyframes App-logo-spin {

@@ -20,7 +20,7 @@ function App() {
     return (
         <div className="App">
             <sizeContext.Provider value={{xl: xl, lg: lg, md: md, sm: sm}}>
-                <Navbar/>
+                <Navbar />
                 <Header/>
                 <Services/>
                 <About/>

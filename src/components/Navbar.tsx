@@ -1,4 +1,4 @@
-import { Grid, GridItem, IconButton, Link, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import { Grid, GridItem, IconButton, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {useContext} from "react";
 import { sizeContext } from "../App";
@@ -7,7 +7,7 @@ import logo from "../img/logo.png";
 
 export default function Navbar() {
     const size = useContext(sizeContext)
-    const height = size.lg ? 70 : 60
+    const height = size.lg ? 70 : 60 // Height of navbar in px
     let cols = size.lg ? 6 : 2;
     let styles = {
         container: {
@@ -28,7 +28,7 @@ export default function Navbar() {
         },
         menuItem: {
             marginLeft: 25,
-            fontSize: 16,
+            fontSize: 12,
         },
         menuList: {
             width: 300,
@@ -51,10 +51,10 @@ export default function Navbar() {
                     </GridItem>
                     {size.lg ?
                         <GridItem style={styles.menuItems} colSpan={size.lg ? 2 : 1} >
-                            <Link style={styles.menuItem}>Tjenester</Link>
-                            <Link style={styles.menuItem}>Om oss</Link>
-                            <Link style={styles.menuItem}>Prosjekter</Link>
-                            <Link style={styles.menuItem}>Kontakt oss</Link>
+                            <a href="#" className="navLink" style={styles.menuItem}>Tjenester</a>
+                            <a href="#" className="navLink" style={styles.menuItem}>Om oss</a>
+                            <a href="#" className="navLink" style={styles.menuItem}>Prosjekter</a>
+                            <a href="#" className="navLink" style={styles.menuItem}>Kontakt oss</a>
                         </GridItem>
                     :
                         <GridItem style={styles.menuItems} colSpan={size.lg ? 2 : 1} >

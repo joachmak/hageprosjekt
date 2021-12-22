@@ -1,12 +1,13 @@
 import {ArrowLeftIcon, ArrowRightIcon} from "@chakra-ui/icons";
-import { Text } from "@chakra-ui/react"
+import {Text, Heading, Flex} from "@chakra-ui/react"
 import {Carousel} from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { sizeContext } from "../App";
+import {sizeContext} from "../App";
 import {useContext} from "react";
 
-function CarouselImage(props: { url: string, label: string }) {
+function CarouselImage(props: { url: string, title: string, label: string }) {
     const darknessOverlayIntensity = 0.4; // [0,1], reduce to lighten
+    const size = useContext(sizeContext)
     let styles = {
         img: {
             minHeight: "80vh",
@@ -18,8 +19,10 @@ function CarouselImage(props: { url: string, label: string }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: "80vh",
-            fontSize: 24,
+            width: "60vw",
+            height: "75vh",
+            fontSize: size.lg ? 22 : 16,
+            margin: "auto",
         }
     }
     return (
@@ -28,7 +31,10 @@ function CarouselImage(props: { url: string, label: string }) {
             ...styles.img,
         }}>
             <div style={styles.label}>
-                <Text>{props.label}</Text>
+                <Flex flexDirection="column">
+                    <Heading>{props.title}</Heading>
+                    <Text>{props.label}</Text>
+                </Flex>
             </div>
         </div>
     )
@@ -36,9 +42,7 @@ function CarouselImage(props: { url: string, label: string }) {
 
 export default function Header() {
     let styles = {
-        container: {
-
-        },
+        container: {},
         arrowStyles: {
             position: 'absolute',
             zIndex: 2,
@@ -53,10 +57,23 @@ export default function Header() {
     }
 
     const size = useContext(sizeContext)
-    let imgUrls = [{url: "https://www.thespruce.com/thmb/TIUYmTRJ3NOFnY9LJ6FzMd_9oBc=/2571x1928/smart/filters:no_upscale()/small-garden-ideas-and-inspiration-4101842-01-5e0462c2365e42de86a4f3ebc2152c1b.jpg", label: "Image 1"}, {url: "https://www.gardeningknowhow.com/wp-content/uploads/2007/03/flowers-1.jpg", label: "Image 2"}, {url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/japanese-garden-ideas-1619540857.jpg?crop=1.00xw:0.707xh;0,0.0876xh&resize=1200:*", label: "Image 3"}]
+    let imgUrls = [{
+        url: "https://www.thespruce.com/thmb/TIUYmTRJ3NOFnY9LJ6FzMd_9oBc=/2571x1928/smart/filters:no_upscale()/small-garden-ideas-and-inspiration-4101842-01-5e0462c2365e42de86a4f3ebc2152c1b.jpg",
+        title: "Tilbud",
+        label: "Hageplanlegging i 2D og 3D, planting, bygging av gjerder, støttemurer, trapper, terasser og mer!"
+    }, {
+        url: "https://www.gardeningknowhow.com/wp-content/uploads/2007/03/flowers-1.jpg",
+        title: "Privat og bedrift",
+        label: "Hageprosjekt utfører hager både for privatpersoner og bedrifter, og har et tett samarbeid med kunden utover prosjektet."
+    }, {
+        url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/japanese-garden-ideas-1619540857.jpg?crop=1.00xw:0.707xh;0,0.0876xh&resize=1200:*",
+        title: "Hageprosjekt",
+        label: "Ditt ønske - vårt oppdrag"
+    }]
     return (
         <div style={styles.container}>
-            <Carousel showThumbs={false} showIndicators={false} showArrows={size.lg} showStatus={false} autoPlay infiniteLoop interval={5000} emulateTouch
+            <Carousel showThumbs={false} showIndicators={false} showArrows={size.lg} showStatus={false} autoPlay
+                      infiniteLoop interval={5000} emulateTouch
                       useKeyboardArrows swipeable
                       renderArrowNext={
                           (onClickHandler, hasNext, label) =>
@@ -80,11 +97,10 @@ export default function Header() {
                       }
             >
                 {
-                    imgUrls.map(image => <CarouselImage url={image.url} label={image.label} />)
+                    imgUrls.map(image => <CarouselImage url={image.url} title={image.title} label={image.label}/>)
                 }
-
-
             </Carousel>
+            <div className="triangleDiv"/>
         </div>
     )
 }

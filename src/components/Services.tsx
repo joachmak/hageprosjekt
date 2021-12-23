@@ -1,9 +1,8 @@
 import {Flex, Grid, GridItem, Heading, Image, Text} from "@chakra-ui/react";
 import {useContext} from "react";
 import {sizeContext} from "../App";
-import hammer from "../img/hammer.png";
-import plant from "../img/plant.png";
-import pencil from "../img/pencil.png";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faSeedling, faHammer, faPencilAlt} from '@fortawesome/free-solid-svg-icons'
 
 export default function Services() {
     const size = useContext(sizeContext)
@@ -25,6 +24,11 @@ export default function Services() {
         heading: {
             marginBottom: 35,
             color: "#555",
+        },
+        icon: {
+            height: 100,
+            transform: "scale(5.5)",
+            color: "rgb(130,200,130)",
         }
     }
 
@@ -46,7 +50,7 @@ export default function Services() {
                               gap={5}>
                             <GridItem style={styles.gridItem}>
                                 <Flex flexDirection="column" align="center">
-                                    <Image boxSize={iconsize + "px"} src={pencil} alt='pencil icon'/>
+                                    <FontAwesomeIcon style={styles.icon} icon={faPencilAlt} />
                                     <Text align="center" style={styles.text}>
                                         Planlegging av hager i både 2D og 3D, slik at våre kunder kan se og tilpasse sin
                                         drømmehage til egne ønsker og behov
@@ -55,7 +59,7 @@ export default function Services() {
                             </GridItem>
                             <GridItem style={styles.gridItem}>
                                 <Flex flexDirection="column" align="center">
-                                    <Image boxSize={iconsize + "px"} src={plant} alt='plant icon'/>
+                                    <FontAwesomeIcon style={styles.icon} icon={faSeedling} />
                                     <Text align="center" style={styles.text}>
                                         Planting av busker, trær, plener og stauder, beskjæring av busker og hekker, og
                                         vanning av plen og planter
@@ -64,7 +68,7 @@ export default function Services() {
                             </GridItem>
                             <GridItem style={styles.gridItem}>
                                 <Flex flexDirection="column" align="center">
-                                    <Image boxSize={iconsize + "px"} src={hammer} alt='hammer icon'/>
+                                    <FontAwesomeIcon style={styles.icon} icon={faHammer} />
                                     <Text align="center" style={styles.text}>
                                         Bygging av terasser, støttemurer, gjerder og trapper, og renovering av gamle
                                         hagekonstruksjoner

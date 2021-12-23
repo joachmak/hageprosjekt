@@ -39,12 +39,6 @@ body {
   transform: scale(2);
 }
 
-.zIndex100 {
-  position: relative;
-  z-index: 100;
-  background-color: red;
-}
-
 .triangleDivTop {
   position: relative;
   width: 0;
@@ -68,7 +62,6 @@ body {
   margin-bottom: -78px;
 }
 
-
 .navLink {
   text-decoration: none;
   transition: all 0.1s ease-in-out;
@@ -78,4 +71,26 @@ body {
 .navLink:hover {
   transition: all 0.1s ease-in-out;
   opacity: 1;
+}
+
+.projectOverlay div:first-of-type {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  height: 0;
+}
+
+.projectOverlay:hover > div:first-of-type {
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  height: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.projectOverlay {
+  transition: all 0.2s ease-in-out;
+}
+
+.projectOverlay:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.02);
 }

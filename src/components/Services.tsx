@@ -1,4 +1,4 @@
-import {Flex, Grid, GridItem, Heading, Image, Text} from "@chakra-ui/react";
+import {Flex, Grid, GridItem, Heading, Text} from "@chakra-ui/react";
 import {useContext} from "react";
 import {sizeContext} from "../App";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -32,7 +32,6 @@ export default function Services() {
         }
     }
 
-    let iconsize = 80;
     let cols = size.lg ? 6 : 4;
     let innercols = size.md ? 3 : 1;
     let rows = size.md ? 1 : 3;

@@ -1,6 +1,7 @@
-import {Grid, GridItem, Heading, Text} from "@chakra-ui/react";
+import {Grid, GridItem, Heading, Modal, ModalContent, ModalOverlay, Text, useDisclosure} from "@chakra-ui/react";
 import {useContext} from "react";
 import {sizeContext} from "../App";
+import CarouselComponent from "./Carousel";
 
 export default function Projects() {
     const size = useContext(sizeContext)
@@ -97,9 +98,7 @@ interface projectInterface {
 }
 
 function Project(props: projectInterface) {
-    const onProjectClick = () => {
-        console.log("Clicked!")
-    }
+    const { isOpen, onOpen, onClose } = useDisclosure()
     let styles = {
         container: {
             cursor: "pointer",
@@ -118,13 +117,21 @@ function Project(props: projectInterface) {
         }
     }
     return (
-        <GridItem className="positionRelative projectOverlay" style={styles.container} background="gray.200"
-                  onClick={() => onProjectClick()}>
-            {/* @ts-ignore */}
-            <div className="positionAbsolute" style={styles.overlay}>
-                <Heading>{props.title}</Heading>
-                <Text>(Trykk for å se flere bilder)</Text>
-            </div>
-        </GridItem>
+        <>
+            <Modal isOpen={isOpen} onClose={onClose} motionPreset='slideInBottom' size={"xl"}>
+                <ModalOverlay />
+                <ModalContent maxW="80vw">
+                    <CarouselComponent imgUrls={props.images} projectView={true} />
+                </ModalContent>
+            </Modal>
+            <GridItem className="positionRelative projectOverlay" style={styles.container} background="gray.200"
+                      onClick={onOpen}>
+                {/* @ts-ignore */}
+                <div className="positionAbsolute" style={styles.overlay}>
+                    <Heading>{props.title}</Heading>
+                    <Text>(Trykk for å se flere bilder)</Text>
+                </div>
+            </GridItem>
+        </>
     )
 }

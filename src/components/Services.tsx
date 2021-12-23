@@ -26,7 +26,7 @@ export default function Services() {
             color: "#555",
         },
         icon: {
-            height: 100,
+            height: 80,
             transform: "scale(5.5)",
             color: "rgb(130,200,130)",
         }

@@ -7,7 +7,7 @@ import logo from "../img/logo.png";
 
 export default function Navbar() {
     const size = useContext(sizeContext)
-    const height = size.lg ? 70 : 60 // Height of navbar in px
+    const height = size.lg ? 100 : 80 // Height of navbar in px
     let cols = size.lg ? 6 : 2;
     let styles = {
         container: {
@@ -28,7 +28,7 @@ export default function Navbar() {
         },
         menuItem: {
             marginLeft: 25,
-            fontSize: 12,
+            fontSize: 16,
         },
         menuList: {
             width: 300,

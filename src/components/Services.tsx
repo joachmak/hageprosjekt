@@ -47,11 +47,11 @@ export default function Services() {
                     <GridItem className="positionRelative" colSpan={4}>
                         <Grid templateColumns={'repeat(' + innercols + ', 1fr)'}
                               templateRows={'repeat(' + rows + ', 1fr)'}
-                              gap={5}>
+                              gap={10}>
                             <GridItem style={styles.gridItem}>
                                 <Flex flexDirection="column" align="center">
                                     <FontAwesomeIcon style={styles.icon} icon={faPencilAlt} />
-                                    <Text align="center" style={styles.text}>
+                                    <Text align="justify" style={styles.text}>
                                         Planlegging av hager i både 2D og 3D, slik at våre kunder kan se og tilpasse sin
                                         drømmehage til egne ønsker og behov
                                     </Text>
@@ -60,7 +60,7 @@ export default function Services() {
                             <GridItem style={styles.gridItem}>
                                 <Flex flexDirection="column" align="center">
                                     <FontAwesomeIcon style={styles.icon} icon={faSeedling} />
-                                    <Text align="center" style={styles.text}>
+                                    <Text align="justify" style={styles.text}>
                                         Planting av busker, trær, plener og stauder, beskjæring av busker og hekker, og
                                         vanning av plen og planter
                                     </Text>
@@ -69,7 +69,7 @@ export default function Services() {
                             <GridItem style={styles.gridItem}>
                                 <Flex flexDirection="column" align="center">
                                     <FontAwesomeIcon style={styles.icon} icon={faHammer} />
-                                    <Text align="center" style={styles.text}>
+                                    <Text align="justify" style={styles.text}>
                                         Bygging av terasser, støttemurer, gjerder og trapper, og renovering av gamle
                                         hagekonstruksjoner
                                     </Text>

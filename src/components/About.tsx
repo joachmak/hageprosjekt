@@ -30,7 +30,7 @@ export default function About() {
                         <Flex style={styles.flexContainer} justify="center" align="center">
                             <Box>
                                 <Heading align="center">Om bedriften</Heading>
-                                <Text align="center">
+                                <Text align="justify">
                                     Hageprosjekt er en bedrift fra Gjøvik som utfører både hageplanlegging og
                                     hagearbeid. Vår prosjektleder har 5 års universitetsutdanning og mastergrad i prydplanter. Vi
                                     utarbeider forskjellige grøntprosjekter både for private kunder og bedrifter. Vi kan gi gode

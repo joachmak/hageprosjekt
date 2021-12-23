@@ -1,9 +1,14 @@
 body {
   overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 .App {
-  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 
 .navContainer {
@@ -20,6 +25,10 @@ body {
   position: fixed;
 }
 
+.positionRelative {
+  position: relative;
+}
+
 .carouselArrows {
   transition: all 0.1s ease-in-out;
   transform: scale(1.7);
@@ -30,16 +39,35 @@ body {
   transform: scale(2);
 }
 
-.triangleDiv {
+.zIndex100 {
   position: relative;
-  margin-top: -50px;
-  margin-left: -50px;
-  width: 150vw;
-  height: 20vh;
-  transform: rotate(-3deg);
-  z-index: 1;
-  background-color: white;
+  z-index: 100;
+  background-color: red;
 }
+
+.triangleDivTop {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-bottom: 80px solid white;
+  border-left: 100vw solid transparent;
+  background-color: transparent;
+  z-index: 100;
+  margin-top: -78px;
+  margin-bottom: 45px;
+}
+
+.triangleDivBottom {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-top: 80px solid white;
+  border-right: 100vw solid transparent;
+  background-color: transparent;
+  z-index: 100;
+  margin-bottom: -78px;
+}
+
 
 .navLink {
   text-decoration: none;
@@ -50,9 +78,4 @@ body {
 .navLink:hover {
   transition: all 0.1s ease-in-out;
   opacity: 1;
-}
-
-.containerDiv {
-  position: relative;
-  margin-bottom: 50px;
 }

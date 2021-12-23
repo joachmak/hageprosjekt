@@ -1,6 +1,8 @@
 
 export default function Projects() {
     return (
-        <>Projects</>
+        <>
+            <div className="triangleDivTop" />
+        </>
     )
 }

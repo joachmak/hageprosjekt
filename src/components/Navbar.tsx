@@ -13,7 +13,7 @@ export default function Navbar() {
         container: {
             backgroundColor: "#F8F9FA",
             boxShadow: "0 1px 5px rgba(0,0,0,0.3)",
-            zIndex: 100,
+            zIndex: 110,
         },
         img: {
             maxHeight: height - 10,
@@ -45,7 +45,6 @@ export default function Navbar() {
             <div className="navContainer" style={styles.container}>
                 <Grid templateColumns={'repeat(' + cols + ', 1fr)'} h={height + "px"} gap={3}>
                     {size.lg && <GridItem />}
-
                     <GridItem colSpan={size.lg ? 2 : 1}>
                         <img style={styles.img} src={logo} alt={"logo"} />
                     </GridItem>

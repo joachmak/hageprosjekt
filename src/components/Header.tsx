@@ -12,6 +12,7 @@ function CarouselImage(props: { url: string, title: string, label: string }) {
         img: {
             minHeight: "80vh",
             backgroundPosition: "center",
+            backgroundSize: "cover",
         },
         label: {
             color: "white",
@@ -72,8 +73,7 @@ export default function Header() {
     return (
         <div style={styles.container}>
             <Carousel showThumbs={false} showIndicators={false} showArrows={size.lg} showStatus={false} autoPlay
-                      infiniteLoop interval={5000} emulateTouch
-                      useKeyboardArrows swipeable
+                      infiniteLoop interval={5000} emulateTouch useKeyboardArrows swipeable
                       renderArrowNext={
                           (onClickHandler, hasNext, label) =>
                               hasNext && (
@@ -99,7 +99,6 @@ export default function Header() {
                     imgUrls.map(image => <CarouselImage url={image.url} title={image.title} label={image.label}/>)
                 }
             </Carousel>
-            <div className="triangleDiv"/>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import {Flex, Grid, GridItem, Image, Text} from "@chakra-ui/react";
+import {Flex, Grid, GridItem, Heading, Image, Text} from "@chakra-ui/react";
 import {useContext} from "react";
 import {sizeContext} from "../App";
 import hammer from "../img/hammer.png";
@@ -22,6 +22,10 @@ export default function Services() {
             maxWidth: size.lg ? "" : "80%",
             marginTop: 25,
         },
+        heading: {
+            marginBottom: 35,
+            color: "#555",
+        }
     }
 
     let iconsize = 80;
@@ -32,6 +36,7 @@ export default function Services() {
         <>
             <div className="triangleDivTop" />
             <div className="positionRelative" style={styles.container}>
+                <Heading align="center" style={styles.heading}>Noen av våre tjenester</Heading>
                 <Grid templateColumns={'repeat(' + cols + ', 1fr)'} templateRows={'repeat(1, 1fr)'}
                       gap={3}>
                     {size.lg && <GridItem/>}

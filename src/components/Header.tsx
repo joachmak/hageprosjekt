@@ -11,8 +11,7 @@ function CarouselImage(props: { url: string, title: string, label: string }) {
     let styles = {
         img: {
             minHeight: "80vh",
-            zIndex: 0,
-            backgroundSize: "cover",
+            backgroundPosition: "center",
         },
         label: {
             color: "white",
@@ -21,7 +20,7 @@ function CarouselImage(props: { url: string, title: string, label: string }) {
             justifyContent: "center",
             width: "60vw",
             height: "75vh",
-            fontSize: size.lg ? 22 : 16,
+            fontSize: size.lg ? 20 : 16,
             margin: "auto",
         }
     }

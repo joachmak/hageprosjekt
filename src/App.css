@@ -31,12 +31,12 @@ body {
 }
 
 .triangleDiv {
-  position: absolute;
+  position: relative;
+  margin-top: -50px;
+  margin-left: -50px;
   width: 150vw;
-  height: 20%;
+  height: 20vh;
   transform: rotate(-3deg);
-  bottom: 50px;
-  left: -150px;
   z-index: 1;
   background-color: white;
 }
@@ -50,4 +50,9 @@ body {
 .navLink:hover {
   transition: all 0.1s ease-in-out;
   opacity: 1;
+}
+
+.containerDiv {
+  position: relative;
+  margin-bottom: 50px;
 }

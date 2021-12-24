@@ -250,3 +250,44 @@ p {
     -webkit-animation-delay: 4s, 2.5s;
     animation-delay: 4s, 2.5s
 }
+
+
+/* Loading animation */
+
+.animated-icon{
+    fill: green;
+    position: absolute;
+    transform: scale(0) rotate(-45deg);
+    transform-origin: bottom center;
+    animation: scaleAndRotate 6s infinite;
+}
+
+.pencil {
+    animation-delay: 0s;
+}
+
+.seedling {
+    animation-delay: 2s;
+}
+
+.hammer {
+    animation-delay: 4s;
+}
+
+@keyframes scaleAndRotate {
+    0% {
+        translate: scale(0) rotate(-45deg);
+    }
+    10% {
+        transform: scale(1) rotate(0deg);
+    }
+    60% {
+        transform: scale(0) rotate(45deg);
+    }
+}
+
+.opacity0 {
+    transition: opacity 1.5s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}

@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import {useMediaQuery} from '@chakra-ui/react';
 import {createContext, useRef} from "react";
+import Snowflakes from "./components/Snowflakes";
 
 const sizeContext = createContext({xl: false, lg: false, md: false, sm: false})
 
@@ -24,9 +25,12 @@ function App() {
     const projectsRef = useRef(null)
     const contactRef = useRef(null)
 
+    let currentDate = new Date();
+    let christmas = currentDate.getMonth() === 11; // Christmas styling in December
     return (
         <div className="App">
             <sizeContext.Provider value={{xl: xl, lg: lg, md: md, sm: sm}}>
+                {christmas && <Snowflakes />}
                 <Navbar headerRef={headerRef} servicesRef={servicesRef} contactRef={contactRef} aboutRef={aboutRef} projectsRef={projectsRef} />
                 <div ref={headerRef}>
                     <Header/>

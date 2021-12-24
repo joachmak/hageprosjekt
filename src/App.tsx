@@ -6,7 +6,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import {useMediaQuery} from '@chakra-ui/react';
-import {createContext} from "react";
+import {createContext, useRef} from "react";
 
 const sizeContext = createContext({xl: false, lg: false, md: false, sm: false})
 
@@ -17,16 +17,33 @@ function App() {
         '(min-width: 768px)',
         '(min-width: 480px)',
     ])
+    // Section refs
+    const headerRef = useRef(null)
+    const servicesRef = useRef(null)
+    const aboutRef = useRef(null)
+    const projectsRef = useRef(null)
+    const contactRef = useRef(null)
+
     return (
         <div className="App">
             <sizeContext.Provider value={{xl: xl, lg: lg, md: md, sm: sm}}>
-                <Navbar />
-                <Header/>
-                <Services/>
-                <About/>
-                <Projects/>
-                <Contact/>
-            </sizeContext.Provider>
+                <Navbar headerRef={headerRef} servicesRef={servicesRef} contactRef={contactRef} aboutRef={aboutRef} projectsRef={projectsRef} />
+                <div ref={headerRef}>
+                    <Header/>
+                </div>
+                <div ref={servicesRef}>
+                    <Services/>
+                </div>
+                <div ref={aboutRef}>
+                    <About/>
+                </div>
+                <div ref={projectsRef}>
+                    <Projects/>
+                </div>
+                <div ref={contactRef}>
+                    <Contact/>
+                </div>
+                </sizeContext.Provider>
         </div>
     );
 }

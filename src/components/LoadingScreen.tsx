@@ -7,7 +7,7 @@ export default function LoadingScreen() {
     }, 3500);
     let styles = {
         container: {
-            backgroundColor: "black",
+            backgroundColor: "white",
             width: "100vw",
             height: "100vh",
             zIndex: 150,

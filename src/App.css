@@ -255,7 +255,7 @@ p {
 /* Loading animation */
 
 .animated-icon{
-    fill: green;
+    fill: rgb(130,200,130);
     position: absolute;
     transform: scale(0) rotate(-45deg);
     transform-origin: bottom center;

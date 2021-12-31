@@ -50,7 +50,7 @@ export default function Services() {
                             <GridItem style={styles.gridItem}>
                                 <Flex flexDirection="column" align="center">
                                     <FontAwesomeIcon style={styles.icon} icon={faPencilAlt} />
-                                    <Text align="justify" style={styles.text}>
+                                    <Text justify="inter-character" style={styles.text}>
                                         Planlegging av hager i både 2D og 3D, slik at våre kunder kan se og tilpasse sin
                                         drømmehage til egne ønsker og behov
                                     </Text>
@@ -59,7 +59,7 @@ export default function Services() {
                             <GridItem style={styles.gridItem}>
                                 <Flex flexDirection="column" align="center">
                                     <FontAwesomeIcon style={styles.icon} icon={faSeedling} />
-                                    <Text align="justify" style={styles.text}>
+                                    <Text align="justify" justify="inter-character" style={styles.text}>
                                         Planting av busker, trær, plener og stauder, beskjæring av busker og hekker, og
                                         vanning av plen og planter
                                     </Text>

@@ -9,6 +9,7 @@ import {useMediaQuery} from '@chakra-ui/react';
 import {createContext, useRef} from "react";
 import Snowflakes from "./components/Snowflakes";
 import LoadingScreen from "./components/LoadingScreen";
+import "./firebase";
 
 const sizeContext = createContext({xl: false, lg: false, md: false, sm: false})
 

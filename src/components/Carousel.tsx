@@ -97,7 +97,7 @@ export default function CarouselComponent(props: carouselInterface) {
                   }
         >
             {
-                props.imgUrls.map(image => <CarouselImage url={image.url} title={image.title ? image.title : ""}
+                props.imgUrls.map(image => <CarouselImage key={image.url} url={image.url} title={image.title ? image.title : ""}
                                                           label={image.label} projectView={props.projectView}/>)
             }
         </Carousel>

@@ -83,7 +83,7 @@ export default function Projects() {
                 <GridItem colSpan={4}>
                     <Grid templateColumns={'repeat(' + cols + ', 1fr)'}
                           templateRows={'repeat(' + rows + ', ' + rowHeight + 'px)'} gap={2}>
-                        {projects.map(project => <Project title={project.title} images={project.images}/>)}
+                        {projects.map(project => <Project key={project.title} title={project.title} images={project.images}/>)}
                     </Grid>
                 </GridItem>
                 {size.lg && <GridItem/>}

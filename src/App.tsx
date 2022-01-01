@@ -9,9 +9,24 @@ import {useMediaQuery} from '@chakra-ui/react';
 import {createContext, useRef} from "react";
 import Snowflakes from "./components/Snowflakes";
 import LoadingScreen from "./components/LoadingScreen";
+import {HashRouter as Router, Switch, Route, RouteProps} from "react-router-dom";
 import "./firebase";
 
+
 const sizeContext = createContext({xl: false, lg: false, md: false, sm: false})
+
+
+interface AuthRouteProps extends RouteProps {
+    redirect?: string
+}
+
+function UnAuthenticatedRoute({ children, redirect = "/", ...rest }: AuthRouteProps) {
+    return (
+        <Route {...rest}>
+            {children}
+        </Route>
+    )
+}
 
 function App() {
     const [xl, lg, md, sm] = useMediaQuery([
@@ -30,25 +45,31 @@ function App() {
     return (
         <div className="App">
             <sizeContext.Provider value={{xl: xl, lg: lg, md: md, sm: sm}}>
-                <Snowflakes />
-                <LoadingScreen />
-                <Navbar headerRef={headerRef} servicesRef={servicesRef} contactRef={contactRef} aboutRef={aboutRef} projectsRef={projectsRef} />
-                <div ref={headerRef}>
-                    <Header/>
-                </div>
-                <div ref={servicesRef}>
-                    <Services/>
-                </div>
-                <div ref={aboutRef}>
-                    <About/>
-                </div>
-                <div ref={projectsRef}>
-                    <Projects/>
-                </div>
-                <div ref={contactRef}>
-                    <Contact/>
-                </div>
-                </sizeContext.Provider>
+                <Router basename={process.env.PUBLIC_URL}>
+                    <Switch>
+                    <UnAuthenticatedRoute path={"/"}>
+                        <Snowflakes />
+                        <LoadingScreen />
+                        <Navbar headerRef={headerRef} servicesRef={servicesRef} contactRef={contactRef} aboutRef={aboutRef} projectsRef={projectsRef} />
+                        <div ref={headerRef}>
+                            <Header/>
+                        </div>
+                        <div ref={servicesRef}>
+                            <Services/>
+                        </div>
+                        <div ref={aboutRef}>
+                            <About/>
+                        </div>
+                        <div ref={projectsRef}>
+                            <Projects/>
+                        </div>
+                        <div ref={contactRef}>
+                            <Contact/>
+                        </div>
+                    </UnAuthenticatedRoute>
+                    </Switch>
+                </Router>
+            </sizeContext.Provider>
         </div>
     );
 }

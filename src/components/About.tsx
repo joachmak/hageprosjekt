@@ -8,7 +8,7 @@ export default function About() {
     const size = useContext(sizeContext)
     let styles = {
         container: {
-            background: "linear-gradient( rgba(0, 0, 0, " + darknessOverlayIntensity + "), rgba(0, 0, 0, " + darknessOverlayIntensity + ") ), url('/img/about/about.jpg')",
+            background: "linear-gradient( rgba(0, 0, 0, " + darknessOverlayIntensity + "), rgba(0, 0, 0, " + darknessOverlayIntensity + ") ), url('/img/about/about.JPG')",
             backgroundAttachment: "fixed",
             backgroundPosition: "center",
             minHeight: minHeight,

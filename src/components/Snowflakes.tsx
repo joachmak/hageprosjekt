@@ -1,7 +1,7 @@
 
 export default function Snowflakes() {
     let currentDate = new Date();
-    let christmas = currentDate.getMonth() === 11; // Christmas styling in December
+    let christmas = currentDate.getMonth() === 11 || currentDate.getMonth() < 2; // Christmas styling in Dec, Jan, Feb
     return (
         <>
             {christmas &&

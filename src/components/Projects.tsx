@@ -120,7 +120,7 @@ export default function Projects() {
         <>
             <div className="triangleDivTop"/>
             <Heading style={styles.heading} align="center">
-                Prosjekter
+                Utvalgte prosjekter
             </Heading>
             <Grid style={styles.parentGrid} templateColumns={'repeat(' + (size.lg ? 6 : 4) + ', 1fr)'} gap={3}>
                 {size.lg && <GridItem/>}

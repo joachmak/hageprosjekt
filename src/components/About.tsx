@@ -24,13 +24,13 @@ export default function About() {
     return (
         <>
             <div style={styles.container}>
-                <Grid templateColumns={'repeat(6, 1fr)'} h={minHeight + "px"} gap={3}>
+                <Grid templateColumns={'repeat(6, 1fr)'} gap={3}>
                     {size.lg && <GridItem />}
                     <GridItem colSpan={size.lg ? 4 : 6} >
                         <Flex style={styles.flexContainer} justify="center" align="center">
                             <Box>
                                 <Heading align="center">Om bedriften</Heading>
-                                <Text align="justify">
+                                <Text align="center">
                                     Hageprosjekt er en bedrift fra Gjøvik som utfører både hageplanlegging og
                                     hagearbeid. Vår prosjektleder har 5 års universitetsutdanning og mastergrad i prydplanter. Vi
                                     utarbeider forskjellige grøntprosjekter både for private kunder og bedrifter. Vi kan gi gode

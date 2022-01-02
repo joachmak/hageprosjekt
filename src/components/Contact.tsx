@@ -158,7 +158,7 @@ export default function Contact() {
                                 leftIcon={<EmailIcon />}
                                 width="200px"
                                 borderColor={"#82C882"}
-                                border={"2px"}
+                                border={"1px"}
                                 variant='outline'
                             >
                                 Send henvendelse

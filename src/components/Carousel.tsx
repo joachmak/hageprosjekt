@@ -74,7 +74,7 @@ export default function CarouselComponent(props: carouselInterface) {
 
     return (
         <Carousel showThumbs={false} showIndicators={props.projectView} showArrows={size.lg} showStatus={false} autoPlay
-                  infiniteLoop interval={5000} emulateTouch useKeyboardArrows swipeable
+                  infiniteLoop interval={5000} emulateTouch useKeyboardArrows swipeable stopOnHover={false}
                   renderArrowNext={
                       (onClickHandler, hasNext, label) =>
                           hasNext && (

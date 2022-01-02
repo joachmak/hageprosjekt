@@ -37,20 +37,41 @@ function CarouselImage(props: { url: string, title?: string, label?: string, pro
             backgroundColor: "rgba(30,30,30,0.85)",
             padding: 20,
             borderRadius: 5,
+        },
+        imgElement: {
+            maxWidth: "80vw",
+        },
+        imgContainer: {
+            backgroundColor: "rgba(0,0,0,0.9)",
+            height: "80vh",
         }
     }
     return (
-        <div style={{
-            backgroundImage: "linear-gradient( rgba(0, 0, 0, " + darknessOverlayIntensity + "), rgba(0, 0, 0, " + darknessOverlayIntensity + ") ), url('" + props.url + "')",
-            ...styles.img,
-        }}>
-            <div style={styles.label}>
-                <Flex flexDirection="column">
-                    {props.title && <Heading>{props.title}</Heading>}
-                    {props.label && <Text style={props.projectView ? styles.text : {}}>{props.label}</Text>}
-                </Flex>
-            </div>
-        </div>
+        <>
+            {props.projectView ?
+                <>
+                    <Flex justifyContent="center" alignItems="center" style={styles.imgContainer}>
+                        <img
+                            src={props.url}
+                            style={styles.imgElement}
+                            alt="Prosjektbilde"
+                        />
+                    </Flex>
+                </>
+                :
+                <div style={{
+                    backgroundImage: "linear-gradient( rgba(0, 0, 0, " + darknessOverlayIntensity + "), rgba(0, 0, 0, " + darknessOverlayIntensity + ") ), url('" + props.url + "')",
+                    ...styles.img,
+                }}>
+                    <div style={styles.label}>
+                        <Flex flexDirection="column">
+                            {props.title && <Heading>{props.title}</Heading>}
+                            {props.label && <Text style={props.projectView ? styles.text : {}}>{props.label}</Text>}
+                        </Flex>
+                    </div>
+                </div>
+            }
+        </>
     )
 }
 

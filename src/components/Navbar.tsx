@@ -2,7 +2,6 @@ import {Grid, GridItem, IconButton, Menu, MenuButton, MenuItem, MenuList} from "
 import {HamburgerIcon} from '@chakra-ui/icons'
 import {MutableRefObject, useContext, useEffect, useState} from "react";
 import {sizeContext} from "../App";
-import logo from "../img/logo.png";
 
 
 interface navInterface {
@@ -82,7 +81,7 @@ export default function Navbar(props: navInterface) {
                         <img
                             className="navLogo"
                             onClick={() => props.headerRef.current.scrollIntoView({behavior: 'smooth'})}
-                            style={styles.img} src={logo} alt={"logo"}/>
+                            style={styles.img} src={"/img/logo.png"} alt={"logo"}/>
                     </GridItem>
                     {size.lg ?
                         <GridItem style={styles.menuItems} colSpan={size.lg ? 2 : 1}>

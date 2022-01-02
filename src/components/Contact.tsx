@@ -121,7 +121,7 @@ export default function Contact() {
                 </GridItem>
                 <GridItem colSpan={2} style={styles.container}>
                     <form
-                        action="https://formspree.io/f/xoqrvlne"
+                        action="https://formspree.io/f/xayvnbga"
                         method="POST"
                     >
                         <Stack style={styles.stack} spacing={4}>

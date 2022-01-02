@@ -9,12 +9,12 @@ interface carouselInterface {
     imgUrls: {
         url: string,
         title?: string,
-        label: string,
+        label?: string,
     }[];
     projectView: boolean;
 }
 
-function CarouselImage(props: { url: string, title?: string, label: string, projectView: boolean }) {
+function CarouselImage(props: { url: string, title?: string, label?: string, projectView: boolean }) {
     const darknessOverlayIntensity = props.projectView ? 0 : 0.4; // [0,1], reduce to lighten
     const size = useContext(sizeContext)
     let styles = {
@@ -47,7 +47,7 @@ function CarouselImage(props: { url: string, title?: string, label: string, proj
             <div style={styles.label}>
                 <Flex flexDirection="column">
                     {props.title && <Heading>{props.title}</Heading>}
-                    <Text style={props.projectView ? styles.text : {}}>{props.label}</Text>
+                    {props.label && <Text style={props.projectView ? styles.text : {}}>{props.label}</Text>}
                 </Flex>
             </div>
         </div>
@@ -98,7 +98,7 @@ export default function CarouselComponent(props: carouselInterface) {
         >
             {
                 props.imgUrls.map(image => <CarouselImage key={image.url} url={image.url} title={image.title ? image.title : ""}
-                                                          label={image.label} projectView={props.projectView}/>)
+                                                          label={image.label ? image.label : undefined} projectView={props.projectView}/>)
             }
         </Carousel>
     )

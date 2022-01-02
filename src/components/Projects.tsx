@@ -9,54 +9,98 @@ export default function Projects() {
     let cols = size.lg ? 3 : (size.md ? 2 : 1);
     let projects = [
         {
-            title: "Prosjekt 1",
+            title: "",
             images: [
-                {
-                    url: "http://hageprosjekt.no/prosjekter/1/1.JPG",
-                    label: "Bilde av ett eller annet"
-                },
-                {
-                    url: "http://hageprosjekt.no/prosjekter/1/2.JPG",
-                    label: "Bilde av hagen fra steintrapp"
-                },
-                {
-                    url: "http://hageprosjekt.no/prosjekter/1/3.JPG",
-                    label: "Steintrapp"
-                }
+                {url: "/img/projects/1/1.jpg"},
+                {url: "/img/projects/1/2.jpg"},
+                {url: "/img/projects/1/3.jpg"},
+                {url: "/img/projects/1/4.jpg"},
+                {url: "/img/projects/1/5.jpg"},
+                {url: "/img/projects/1/6.jpg"},
+                {url: "/img/projects/1/7.jpg"},
             ]
         },
         {
-            title: "Prosjekt 2",
+            title: "",
             images: [
-                {
-                    url: "http://hageprosjekt.no/prosjekter/6/1.JPG",
-                    label: "Bilde av ett eller annet"
-                },
-                {
-                    url: "http://hageprosjekt.no/prosjekter/1/2.JPG",
-                    label: "Bilde av hagen fra steintrapp"
-                },
-                {
-                    url: "http://hageprosjekt.no/prosjekter/1/3.JPG",
-                    label: "Steintrapp"
-                }
+                {url: "/img/projects/2/1.jpg"},
+                {url: "/img/projects/2/2.jpg"},
+                {url: "/img/projects/2/3.jpg"},
+                {url: "/img/projects/2/4.jpg"},
+                {url: "/img/projects/2/5.jpg"},
             ]
         },
         {
-            title: "Prosjekt 3",
+            title: "",
             images: [
-                {
-                    url: "http://hageprosjekt.no/prosjekter/4/3.JPG",
-                    label: "Bilde av ett eller annet"
-                },
-                {
-                    url: "http://hageprosjekt.no/prosjekter/1/2.JPG",
-                    label: "Bilde av hagen fra steintrapp"
-                },
-                {
-                    url: "http://hageprosjekt.no/prosjekter/1/3.JPG",
-                    label: "Steintrapp"
-                }
+                {url: "/img/projects/3/1.jpg"},
+                {url: "/img/projects/3/2.jpg"},
+                {url: "/img/projects/3/3.jpg"},
+                {url: "/img/projects/3/4.jpg"},
+                {url: "/img/projects/3/5.jpg"},
+                {url: "/img/projects/3/6.jpg"},
+                {url: "/img/projects/3/7.jpg"},
+                {url: "/img/projects/3/8.jpg"},
+                {url: "/img/projects/3/9.jpg"},
+                {url: "/img/projects/3/10.jpg"},
+                {url: "/img/projects/3/11.jpg"},
+                {url: "/img/projects/3/12.jpg"},
+                {url: "/img/projects/3/13.jpg"},
+                {url: "/img/projects/3/14.jpg"},
+                {url: "/img/projects/3/15.jpg"},
+                {url: "/img/projects/3/16.jpg"},
+                {url: "/img/projects/3/17.jpg"},
+                {url: "/img/projects/3/18.jpg"},
+                {url: "/img/projects/3/19.jpg"},
+            ]
+        },
+        {
+            title: "",
+            images: [
+                {url: "/img/projects/4/1.jpg"},
+                {url: "/img/projects/4/2.jpg"},
+                {url: "/img/projects/4/3.jpg"},
+            ]
+        },
+        {
+            title: "",
+            images: [
+                {url: "/img/projects/5/1.jpg"},
+                {url: "/img/projects/5/2.jpg"},
+                {url: "/img/projects/5/3.jpg"},
+                {url: "/img/projects/5/4.jpg"},
+                {url: "/img/projects/5/5.jpg"},
+                {url: "/img/projects/5/6.jpg"},
+                {url: "/img/projects/5/7.jpg"},
+            ]
+        },
+        {
+            title: "",
+            images: [
+                {url: "/img/projects/6/1.jpg"},
+                {url: "/img/projects/6/2.jpg"},
+                {url: "/img/projects/6/3.jpg"},
+                {url: "/img/projects/6/4.jpg"},
+                {url: "/img/projects/6/5.jpg"},
+                {url: "/img/projects/6/6.jpg"},
+                {url: "/img/projects/6/7.jpg"},
+                {url: "/img/projects/6/8.jpg"},
+                {url: "/img/projects/6/9.jpg"},
+            ]
+        },
+        {
+            title: "",
+            images: [
+                {url: "/img/projects/7/1.jpg"},
+                {url: "/img/projects/7/2.jpg"},
+                {url: "/img/projects/7/3.jpg"},
+                {url: "/img/projects/7/4.jpg"},
+                {url: "/img/projects/7/5.jpg"},
+                {url: "/img/projects/7/6.jpg"},
+                {url: "/img/projects/7/7.jpg"},
+                {url: "/img/projects/7/8.jpg"},
+                {url: "/img/projects/7/9.jpg"},
+                {url: "/img/projects/7/10.jpg"},
             ]
         },
     ]
@@ -83,7 +127,7 @@ export default function Projects() {
                 <GridItem colSpan={4}>
                     <Grid templateColumns={'repeat(' + cols + ', 1fr)'}
                           templateRows={'repeat(' + rows + ', ' + rowHeight + 'px)'} gap={2}>
-                        {projects.map(project => <Project key={project.title} title={project.title} images={project.images}/>)}
+                        {projects.map(project => <Project key={project.title} title={project.title ? project.title : undefined} images={project.images}/>)}
                     </Grid>
                 </GridItem>
                 {size.lg && <GridItem/>}
@@ -93,8 +137,8 @@ export default function Projects() {
 }
 
 interface projectInterface {
-    title: string;
-    images: { url: string, label: string }[]
+    title?: string;
+    images: { url: string, label?: string }[]
 }
 
 function Project(props: projectInterface) {
@@ -128,8 +172,8 @@ function Project(props: projectInterface) {
                       onClick={onOpen}>
                 {/* @ts-ignore */}
                 <div className="positionAbsolute" style={styles.overlay}>
-                    <Heading>{props.title}</Heading>
-                    <Text>(Trykk for å se flere bilder)</Text>
+                    {props.title && <Heading>{props.title}</Heading>}
+                    <Text>(Trykk for å se {props.images.length} bilder)</Text>
                 </div>
             </GridItem>
         </>

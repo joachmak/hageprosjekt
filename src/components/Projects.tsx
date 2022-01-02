@@ -99,8 +99,8 @@ export default function Projects() {
                 {url: "/img/projects/7/6.JPG"},
                 {url: "/img/projects/7/7.JPG"},
                 {url: "/img/projects/7/8.JPG"},
-                {url: "/img/projects/7/9.JPG"},
-                {url: "/img/projects/7/10.JPG"},
+                {url: "/img/projects/7/9.jpg"},
+                {url: "/img/projects/7/10.jpg"},
             ]
         },
     ]

@@ -11,6 +11,7 @@ export default function About() {
             background: "linear-gradient( rgba(0, 0, 0, " + darknessOverlayIntensity + "), rgba(0, 0, 0, " + darknessOverlayIntensity + ") ), url('/img/about/about.JPG')",
             backgroundAttachment: "fixed",
             backgroundPosition: "center",
+            backgroundSize: "cover",
             minHeight: minHeight,
             zIndex: 3,
             color: "white",

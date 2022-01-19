@@ -55,9 +55,9 @@ export default function Services() {
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"
-                                        stroke-width="1"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="1"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         style={styles.icon}
                                     >
                                         <line x1="18" y1="2" x2="22" y2="6" />
@@ -78,9 +78,9 @@ export default function Services() {
                                         viewBox="0 0 24 24"
                                         fill="currentColor"
                                         stroke="white"
-                                        stroke-width="1"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="1"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         style={styles.icon}
                                     >
                                         <g>
@@ -103,9 +103,9 @@ export default function Services() {
                                         viewBox="0 0 24 24"
                                         fill="none"
                                         stroke="currentColor"
-                                        stroke-width="1"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="1"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                         style={styles.icon}
                                     >
                                         <path d="M15 12l-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 010-3L12 9" />

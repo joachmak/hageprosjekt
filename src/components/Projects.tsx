@@ -127,7 +127,7 @@ export default function Projects() {
                 <GridItem colSpan={4}>
                     <Grid templateColumns={'repeat(' + cols + ', 1fr)'}
                           templateRows={'repeat(' + rows + ', ' + rowHeight + 'px)'} gap={2}>
-                        {projects.map(project => <Project key={project.title} title={project.title ? project.title : undefined} images={project.images}/>)}
+                        {projects.map(project => <Project key={project.images[0].url} title={project.title ? project.title : undefined} images={project.images}/>)}
                     </Grid>
                 </GridItem>
                 {size.lg && <GridItem/>}

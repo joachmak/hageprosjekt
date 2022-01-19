@@ -39,7 +39,7 @@ export default function Navbar(props: navInterface) {
                 setCurrentSection(sections[0])
             }
         });
-    }, [])
+    }, []) // eslint-disable-line
     let cols = size.lg ? 6 : 2;
     let styles = {
         container: {

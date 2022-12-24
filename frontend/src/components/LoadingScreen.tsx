@@ -1,16 +1,21 @@
-import {useState} from "react";
+import {useEffect} from "react";
 
-export default function LoadingScreen() {
-    let [displayOverlay, setDisplayOverlay] = useState(false)
-    setTimeout(() => {
-        setDisplayOverlay(true);
-    }, 3500);
+interface Props {
+    disappear: boolean
+}
+
+export default function LoadingScreen(props: Props) {
+    useEffect(() => {
+        if (props.disappear) {
+            document.getElementById("loaderOverlay")!.className += " opacity0"
+        }
+    }, [props.disappear])
     let styles = {
         container: {
             backgroundColor: "white",
             width: "100vw",
             height: "100vh",
-            zIndex: 150,
+            zIndex: 250,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -28,7 +33,7 @@ export default function LoadingScreen() {
         },
     }
     return (
-        <div className={"positionFixed" + (displayOverlay ? " opacity0" : "")} style={styles.container}>
+        <div style={styles.container} id="loaderOverlay" className={"positionFixed"}>
             <svg style={styles.innerContainer} className="animated-icon pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525 525">
                 <path
                     d="M333.16,51v51.13a9.43,9.43,0,0,1-9.43,9.43H200.62a9.42,9.42,0,0,1-9.42-9.43V51a37.73,37.73,0,0,1,37.65-37.65H295.5A37.59,37.59,0,0,1,333.16,51Zm-142,95V437.27l55.62,79.13a18.84,18.84,0,0,0,30.83,0l55.56-79.18V146a9.41,9.41,0,0,0-9.43-9.42H200.68A9.51,9.51,0,0,0,191.2,146ZM235.56,368a10.93,10.93,0,0,1-11-11V186.19a11,11,0,0,1,22,0V357a10.93,10.93,0,0,1-11,11Zm26.62,66.65L288.79,408l20.13,20.13-29.5,42H244.93l-29.5-42L235.56,408Z"/>

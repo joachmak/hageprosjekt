@@ -8,9 +8,10 @@ export default function About() {
     const minHeight = 400
     const size = useContext(sizeContext)
     const [bgImageUrl, setBgImageUrl] = useState("")
+
     useEffect(() => {
         sanityClient.fetch("*[_type == 'om-bilde']{bilde{'url': asset->url}}").then((d) => {
-            setBgImageUrl(d[0]["bilde"]["url"])
+            setBgImageUrl(d[0]["bilde"]["url"] + "?w=1200")
         })
     }, [])
     let styles = {

@@ -23,6 +23,7 @@ body {
 
 .positionFixed {
     position: fixed;
+    z-index: 300;
 }
 
 .positionRelative {
@@ -274,6 +275,12 @@ p {
     animation-delay: 4s;
 }
 
+.opacity0 {
+    transition: opacity 1.5s ease-out;
+    opacity: 0;
+    pointer-events: none;
+}
+
 @keyframes scaleAndRotate {
     0% {
         translate: scale(0) rotate(-45deg);
@@ -284,10 +291,4 @@ p {
     60% {
         transform: scale(0) rotate(45deg);
     }
-}
-
-.opacity0 {
-    transition: opacity 1.5s ease-out;
-    opacity: 0;
-    pointer-events: none;
 }

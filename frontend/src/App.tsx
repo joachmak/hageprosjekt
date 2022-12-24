@@ -6,9 +6,10 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import {useMediaQuery} from '@chakra-ui/react';
-import {createContext, useRef} from "react";
+import {createContext, useRef, useState} from "react";
 import Snowflakes from "./components/Snowflakes";
 import {HashRouter as Router, Switch, Route, RouteProps} from "react-router-dom";
+import LoadingScreen from "./components/LoadingScreen";
 
 
 const sizeContext = createContext({xl: false, lg: false, md: false, sm: false})
@@ -39,6 +40,7 @@ function App() {
     const aboutRef = useRef(null)
     const projectsRef = useRef(null)
     const contactRef = useRef(null)
+    const [hasPageLoaded, setHasPageLoaded] = useState(false)
 
     return (
         <div className="App">
@@ -46,10 +48,11 @@ function App() {
                 <Router basename={process.env.PUBLIC_URL}>
                     <Switch>
                     <UnAuthenticatedRoute path={"/"}>
+                        <LoadingScreen disappear={hasPageLoaded} />
                         <Snowflakes />
                         <Navbar headerRef={headerRef} servicesRef={servicesRef} contactRef={contactRef} aboutRef={aboutRef} projectsRef={projectsRef} />
                         <div ref={headerRef}>
-                            <Header/>
+                            <Header setHasPageLoaded={setHasPageLoaded}/>
                         </div>
                         <div ref={servicesRef}>
                             <Services/>

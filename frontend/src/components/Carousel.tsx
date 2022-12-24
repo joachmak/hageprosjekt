@@ -46,14 +46,14 @@ function CarouselImage(props: { url: string, title?: string, label?: string, pro
             height: "80vh",
         }
     }
-    console.log(props.url)
+    const modifiedUrl = props.url + "?w=1200"
     return (
         <>
             {props.projectView ?
                 <>
                     <Flex justifyContent="center" alignItems="center" style={styles.imgContainer}>
                         <img
-                            src={props.url}
+                            src={modifiedUrl}
                             style={styles.imgElement}
                             alt="Prosjektbilde"
                         />
@@ -61,7 +61,7 @@ function CarouselImage(props: { url: string, title?: string, label?: string, pro
                 </>
                 :
                 <div style={{
-                    backgroundImage: "linear-gradient( rgba(0, 0, 0, " + darknessOverlayIntensity + "), rgba(0, 0, 0, " + darknessOverlayIntensity + ") ), url('" + props.url + "')",
+                    backgroundImage: "linear-gradient( rgba(0, 0, 0, " + darknessOverlayIntensity + "), rgba(0, 0, 0, " + darknessOverlayIntensity + ") ), url('" + modifiedUrl + "')",
                     ...styles.img,
                 }}>
                     <div style={styles.label}>
@@ -77,7 +77,6 @@ function CarouselImage(props: { url: string, title?: string, label?: string, pro
 }
 
 export default function CarouselComponent(props: carouselInterface) {
-    const size = useContext(sizeContext)
     let styles = {
         container: {},
         arrowStyles: {
@@ -95,8 +94,8 @@ export default function CarouselComponent(props: carouselInterface) {
     }
 
     return (
-        <Carousel showThumbs={false} showIndicators={props.projectView} showArrows={size.lg} showStatus={false} autoPlay
-                  infiniteLoop interval={5000} emulateTouch useKeyboardArrows swipeable stopOnHover={false}
+        <Carousel showThumbs={false} showIndicators={props.projectView} showStatus={false} autoPlay
+                  infiniteLoop interval={5000} useKeyboardArrows stopOnHover={false}
                   renderArrowNext={
                       (onClickHandler, hasNext, label) =>
                           hasNext && (

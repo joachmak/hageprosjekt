@@ -8,9 +8,7 @@ import Contact from "./components/Contact";
 import {useMediaQuery} from '@chakra-ui/react';
 import {createContext, useRef} from "react";
 import Snowflakes from "./components/Snowflakes";
-import LoadingScreen from "./components/LoadingScreen";
 import {HashRouter as Router, Switch, Route, RouteProps} from "react-router-dom";
-import "./firebase";
 
 
 const sizeContext = createContext({xl: false, lg: false, md: false, sm: false})
@@ -49,7 +47,6 @@ function App() {
                     <Switch>
                     <UnAuthenticatedRoute path={"/"}>
                         <Snowflakes />
-                        <LoadingScreen />
                         <Navbar headerRef={headerRef} servicesRef={servicesRef} contactRef={contactRef} aboutRef={aboutRef} projectsRef={projectsRef} />
                         <div ref={headerRef}>
                             <Header/>

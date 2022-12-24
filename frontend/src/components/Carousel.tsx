@@ -46,6 +46,7 @@ function CarouselImage(props: { url: string, title?: string, label?: string, pro
             height: "80vh",
         }
     }
+    console.log(props.url)
     return (
         <>
             {props.projectView ?

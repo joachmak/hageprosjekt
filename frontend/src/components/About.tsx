@@ -1,21 +1,28 @@
 import {Flex, Text, Heading, Box, Grid, GridItem} from "@chakra-ui/react"
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {sizeContext} from "../App";
+import sanityClient from "../client";
 
 export default function About() {
     const darknessOverlayIntensity = 0.5
     const minHeight = 400
     const size = useContext(sizeContext)
+    const [bgImageUrl, setBgImageUrl] = useState("")
+    useEffect(() => {
+        sanityClient.fetch("*[_type == 'om-bilde']{bilde{'url': asset->url}}").then((d) => {
+            setBgImageUrl(d[0]["bilde"]["url"])
+        })
+    }, [])
     let styles = {
         container: {
-            background: "linear-gradient( rgba(0, 0, 0, " + darknessOverlayIntensity + "), rgba(0, 0, 0, " + darknessOverlayIntensity + ") ), url('/img/about/about.JPG')",
             backgroundAttachment: "fixed",
             backgroundPosition: "center",
             backgroundSize: "cover",
             minHeight: minHeight,
             zIndex: 3,
             color: "white",
-            padding: "140px 0"
+            padding: "140px 0",
+            backgroundImage: "linear-gradient( rgba(0, 0, 0, " + darknessOverlayIntensity + "), rgba(0, 0, 0, " + darknessOverlayIntensity + ") ), url('" + bgImageUrl + "')",
         },
         flexContainer: {
             minHeight: minHeight,

@@ -11,7 +11,7 @@ export default function Projects() {
     const [projects, setProjects] = useState([])
     useEffect(() => {
         sanityClient.fetch("*[_type == 'prosjekt']{'title': '', 'images': prosjektsett[]{'url': asset->url}}").then((d) => {
-            d.forEach((project: { url: string; }) => project.url = project.url + "?w=800")
+            d.forEach((project: { url: string; }) => project.url = project.url + "?w=1600")
             // @ts-ignore
             setProjects(d)
         })
